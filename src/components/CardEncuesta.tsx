@@ -35,7 +35,7 @@ export default function CardEncuesta() {
 
 
     return (
-        <div className="relative p-4 text-center border-2 rounded-md shadow">
+        <div className="relative p-4 m-4 text-center border-2 rounded-md shadow">
             {
                 registred ?
                     (
@@ -46,7 +46,9 @@ export default function CardEncuesta() {
                                     <button className="px-2 py-1 text-white rounded bg-zinc-950" onClick={() => handleButton("SI")}>SI</button>
                                     <button className="px-2 py-1 text-white rounded bg-zinc-950" onClick={() => handleButton("NO")}>NO</button>
                                 </div>
-                                <div className="absolute right-0 p-1 text-white rounded -top-4 bg-zinc-950">{pregunta + 1}/{preguntas.length}</div>
+                                <div className="absolute right-0 p-1 text-white rounded -top-4 bg-zinc-950 ">
+                                    <b className="text-lg">{pregunta + 1}</b>/{preguntas.length}
+                                </div>
                             </div>
                         )
                     )

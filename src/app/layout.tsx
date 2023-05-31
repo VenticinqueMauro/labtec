@@ -33,8 +33,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className}`}>
-        <main className='flex items-center justify-center h-full px-3 py-2 mx-auto max-w-7xl'>
+      <body className={`${inter.className} flex items-center justify-center`}>
+        <main className='w-full h-screen px-3 py-2 mx-auto max-w-7xl'>
           {children}
         </main>
       </body>

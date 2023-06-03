@@ -1,11 +1,13 @@
 'use client'
 
-import { agregarPacientesAFirebase } from "@/firebase/firebase"
+import { agregarPacientesAFirebase } from "@/firebase/functions"
 import { Paciente } from "@/interfaces/interface"
 import { preguntas } from "@/interfaces/preguntas"
 import { useStore } from "@/store/store"
 import { useEffect, useState } from "react"
 import FormInicial from "./FormInicial"
+
+
 export default function CardEncuesta() {
 
     const { registred, paciente } = useStore()
@@ -35,16 +37,16 @@ export default function CardEncuesta() {
 
 
     return (
-        <div className="relative p-4 m-4 text-center border-2 rounded-md shadow">
+        <div className="relative px-2 py-3 pt-6 m-4 text-center border-2 rounded-md shadow w-80">
             {
                 registred ?
                     (
                         preguntas[pregunta] && (
-                            <div className="mx-auto w-96">
-                                <p className="max-h-24">{preguntas[pregunta]}</p>
-                                <div className="flex items-center justify-center gap-4 py-2">
-                                    <button className="px-2 py-1 text-white rounded bg-zinc-950" onClick={() => handleButton("SI")}>SI</button>
-                                    <button className="px-2 py-1 text-white rounded bg-zinc-950" onClick={() => handleButton("NO")}>NO</button>
+                            <div >
+                                <p className="text-lg">{preguntas[pregunta]}</p>
+                                <div className="flex items-center justify-center gap-4 pt-3 ">
+                                    <button className="w-full px-2 py-1 text-white rounded shadow bg-zinc-950" onClick={() => handleButton("SI")}>SI</button>
+                                    <button className="w-full px-2 py-1 text-white rounded shadow bg-zinc-950" onClick={() => handleButton("NO")}>NO</button>
                                 </div>
                                 <div className="absolute right-0 p-1 text-white rounded -top-4 bg-zinc-950 ">
                                     <b className="text-lg">{pregunta + 1}</b>/{preguntas.length}

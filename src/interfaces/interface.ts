@@ -55,7 +55,6 @@ export interface Patologias {
 }
 
 export interface DatosPersonales {
-    id: any;
     correoElectronico: string;
     nombreApellido: string;
     dni: string;

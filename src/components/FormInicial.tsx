@@ -10,7 +10,6 @@ function FormInicial() {
     const { setRegistred, setPaciente } = useStore()
 
     const [datosPaciente, setDatosPaciente] = useState<DatosPersonales>({
-        id: '',
         correoElectronico: '',
         nombreApellido: '',
         dni: '',
@@ -33,6 +32,7 @@ function FormInicial() {
         setRegistred();
         setPaciente(datosPaciente);
     }
+
 
     return (
         <div>
@@ -62,13 +62,15 @@ function FormInicial() {
                 <div>
                     <input
                         className="p-1 m-2 text-black border rounded"
-                        type="text"
+                        type="number"
                         name="dni"
                         placeholder="DNI"
-                        value={datosPaciente.dni}
+                        value={datosPaciente.dni.toString()}
                         onChange={handleChange}
+                        step={'any'}
                         required
                     />
+
                 </div>
                 <div>
                     <input
@@ -105,7 +107,8 @@ function FormInicial() {
                         required
                     />
                 </div>
-                <button type="submit" className="px-2 py-1 text-white rounded bg-zinc-950">Guardar</button>
+                <button type="submit" className="w-full px-2 py-1 text-white rounded bg-zinc-950">Comenzar Encuesta</button>
+                <button className="w-full px-2 py-1 mt-5 text-white rounded bg-zinc-950" onClick={() => setRegistred()}>Saltar</button>
             </form>
         </div>
     );

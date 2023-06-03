@@ -1,6 +1,6 @@
-import { app } from "@/app/layout";
 import { Paciente } from "@/interfaces/interface";
-import { addDoc, arrayUnion, collection, doc, getDoc, getFirestore, updateDoc } from "firebase/firestore";
+import { arrayUnion, collection, doc, getDoc, getFirestore, updateDoc } from "firebase/firestore";
+import { app } from "./conectivity";
 
 const db = getFirestore(app);
 const labtecRef = collection(db, 'LABTEC');
